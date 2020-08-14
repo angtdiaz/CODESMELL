@@ -11,6 +11,9 @@ public class Profesor {
     public String telefono;
     public InformacionAdicionalProfesor info;
     public ArrayList<Paralelo> paralelos;
+    public int añosdeTrabajo;
+    public String facultad;
+    public double BonoFijo;
 
     public Profesor(String codigo, String nombre, String apellido, String facultad, int edad, String direccion, String telefono) {
         this.codigo = codigo;
@@ -27,8 +30,9 @@ public class Profesor {
     }
     
     public double calcularSueldo(){
-        return this.info.añosdeTrabajo*600 + this.info.BonoFijo;
+        return this.añosdeTrabajo*600 + this.BonoFijo;
     }  
+    
     
     
 }
