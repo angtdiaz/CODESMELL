@@ -9,7 +9,6 @@ public class Profesor {
     public int edad;
     public String direccion;
     public String telefono;
-    public InformacionAdicionalProfesor info;
     public ArrayList<Paralelo> paralelos;
     public int añosdeTrabajo;
     public String facultad;
