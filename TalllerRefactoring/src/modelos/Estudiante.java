@@ -71,21 +71,18 @@ public class Estudiante{
         this.telefono = telefono;
     }
     
-     public double CalcularNotaInicial(Paralelo p, double nexamen,double ndeberes, double nlecciones, double ntalleres){
-        double notaInicial=0;
-        for(Paralelo par:paralelos){
-            if(p.equals(par)){
-                double notaTeorico=(nexamen+ndeberes+nlecciones)*0.80;
-                double notaPractico=(ntalleres)*0.20;
-                notaInicial=notaTeorico+notaPractico;
-            }
-        }
-        return notaInicial;
+    public double CalcularNotaInicial(Paralelo p, double nexamen,double ndeberes, double nlecciones, double ntalleres){
+        return calcularNota(p,nexamen,ndeberes,nlecciones,ntalleres);
+
     }
     
      
     public double CalcularNotaFinal(Paralelo p, double nexamen,double ndeberes, double nlecciones, double ntalleres){
-        double notaFinal=0;
+        return calcularNota(p,nexamen,ndeberes,nlecciones,ntalleres);
+    }
+    
+    public double calcularNota(Paralelo p, double nexamen,double ndeberes, double nlecciones, double ntalleres){
+            double notaFinal=0;
         for(Paralelo par:paralelos){
             if(p.equals(par)){
                 double notaTeorico=(nexamen+ndeberes+nlecciones)*0.80;
@@ -94,18 +91,6 @@ public class Estudiante{
             }
         }
         return notaFinal;
-    }
-    
-     public double CalcularNotaTotal(Paralelo p){
-        double notaTotal=0;
-        for(Paralelo par:paralelos){
-            if(p.equals(par)){
-                notaTotal=(p.getMateria().getNotaInicial()+p.getMateria().getNotaFinal())/2;
-                
-            }
-        }
-        return notaTotal;
-        
     }
 }
         
